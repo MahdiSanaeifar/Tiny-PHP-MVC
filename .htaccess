@@ -5,7 +5,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ mvc/index.php [QSA,L]
 
 
-RewriteEngine On
+RewriteEngine on
 RewriteCond %{THE_REQUEST} !/public/* [NC]
 RewriteCond %{THE_REQUEST} /(application|system|view)/.+ [NC]
-RewriteRule ^ - [R=403-L]
+RewriteRule ^ - [R=403,L]
