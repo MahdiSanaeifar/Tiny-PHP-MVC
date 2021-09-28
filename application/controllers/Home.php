@@ -2,15 +2,16 @@
 
 namespace Application\Controllers;
 
-class Home
+class Home extends Controller
 {
     public function index()
     {
-        echo "hi";
+        $productName = "PHONE";
+        $this->view('app.index', compact('productName'));
     }
 
     public function create()
     {
-        echo "this is a create method";
+        $this->redirect('Home');
     }
 }
