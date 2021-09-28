@@ -6,6 +6,7 @@ use ReflectionMethod;
 
 class Routing
 {
+
     private $current_route;
 
     public function __construct()
@@ -16,26 +17,27 @@ class Routing
 
     public function run()
     {
+
         $path = realpath(dirname(__FILE__) . "/../../application/controllers/" . $this->current_route[0] . ".php");
         if (!file_exists($path)) {
-            echo "404 - file not exist!";
-            exit();
+            echo "404 - file not exist!!";
+            exit;
         }
-        require_once($path);
+//        require_once($path);
         sizeof($this->current_route) == 1 ? $method = "index" : $method = $this->current_route[1];
+
         $class = "Application\Controllers\\" . $this->current_route[0];
         $object = new $class();
         if (method_exists($object, $method)) {
             $reflection = new ReflectionMethod($class, $method);
             $parameterCount = $reflection->getNumberOfParameters();
-            if ($parameterCount <= count(array_slice($this->current_route, 2))) {
+            if ($parameterCount <= count(array_slice($this->current_route, 2)))
                 call_user_func_array(array($object, $method), array_slice($this->current_route, 2));
-            } else {
+            else {
                 echo "404 - parameter error!";
             }
         } else {
-            echo "404 - method not exist";
+            echo "404 - method not exist!";
         }
     }
-
 }
