@@ -8,4 +8,9 @@ class Home
     {
         echo "hi";
     }
+
+    public function create()
+    {
+        echo "this is a create method";
+    }
 }
