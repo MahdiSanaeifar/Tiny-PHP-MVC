@@ -1,49 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>mvc</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="all" type="text/css">
-    <link rel="stylesheet" href="css/style.css" media="all" type="text/css">
-</head>
-<body>
-<section id="app">
-
-    <nav class="navbar navbar-expand-lg navbar-dark  bg-blue">
-        <a class="navbar-brand" href="#">MVC tutorial</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="category.html">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="category.html">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="category.html">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="category.html">Link</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+<?php
+$this->include('app.layouts.header');
+?>
     <section class="container my-5">
         <!-- Example row of columns -->
         <section class="row">
             <section class="col-md-12">
                 <h1>Lorem ipsum dolor sit amet, consectetur?</h1>
                 <h5 class="d-flex justify-content-between align-items-center">
-                    <a href="category.html">Lorem ipsum dolor</a>
+                    <a href="category.php">Lorem ipsum dolor</a>
                     <span class="date-time">26 feb 2019</span>
                 </h5>
                 <article class="bg-article p-3">
@@ -56,9 +20,6 @@
             </section>
         </section>
     </section>
-
-</section>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php
+$this->include('app.layouts.footer');
+?>
