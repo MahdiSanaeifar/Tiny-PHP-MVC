@@ -21,6 +21,7 @@ class Article extends Controller
         return $this->view('panel.article.create', compact('categories'));
     }
 
+    /** @noinspection PhpVoidFunctionResultUsedInspection */
     public function store()
     {
         $article = new ArticleModel();
