@@ -12,12 +12,12 @@ class Model
     public function __construct()
     {
         if (!isset($connection)) {
-            global $dbHost, $dbName, $dbPassword, $dbUsername;
+            global $dbHost, $dbName, $dbUsername, $dbPassword;
             $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
             try {
-                $this->connection = new PDO("mysql:host=" . $dbHost . "'dbname=" . $dbName, $dbUsername, $dbPassword, $options);
+                $this->connection = new PDO("mysql:host=" . $dbHost . ";dbname=" . $dbName, $dbUsername, $dbPassword, $options);
             } catch (PDOException $e) {
-                echo "There is some problem in connection" . $e->getMessage();
+                echo "There is some problem in connection:" . $e->getMessage();
             }
         }
     }
@@ -27,7 +27,7 @@ class Model
         $this->closeConnection();
     }
 
-    public function query($query, $values = null)
+    protected function query($query, $values = null)
     {
         try {
             if ($values == null) {
@@ -42,7 +42,7 @@ class Model
         }
     }
 
-    public function execute($query, $values = null)
+    protected function execute($query, $values = null)
     {
         try {
             if ($values == null) {
