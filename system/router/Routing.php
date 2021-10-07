@@ -23,7 +23,8 @@ class Routing
             echo "404 - file not exist!!";
             exit;
         }
-//        require_once($path);
+        require_once($path);
+
         sizeof($this->current_route) == 1 ? $method = "index" : $method = $this->current_route[1];
 
         $class = "Application\Controllers\\" . $this->current_route[0];
