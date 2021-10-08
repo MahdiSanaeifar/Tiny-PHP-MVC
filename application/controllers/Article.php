@@ -36,8 +36,8 @@ class Article extends Controller
 
     public function edit($id)
     {
-        $categories = new Category();
-        $categories->all();
+        $category = new Category();
+        $categories = $category->all();
         $ob_article = new ArticleModel();
         $article = $ob_article->find($id);
         return $this->view('panel.article.edit', compact('categories', 'article'));
