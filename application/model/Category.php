@@ -14,7 +14,7 @@ class Category extends Model
     public function articles($cat_id)
     {
         $query = "SELECT * FROM `articles` WHERE cat_id = ? ";
-        $result = $this->query($query, array($cat_id))->fetch();
+        $result = $this->query($query, array($cat_id))->fetchAll();
         $this->closeConnection();
         return $result;
     }
