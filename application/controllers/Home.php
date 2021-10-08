@@ -24,7 +24,7 @@ class Home extends Controller
         $category = $ob_category->find($id);
         $ob_category = new Category();
         $articles = $ob_category->articles($id);
-        return $this->view('app.index', compact('categories', 'articles','category'));
+        return $this->view('app.category', compact('categories', 'articles','category'));
     }
 
     public function show($id)
@@ -33,7 +33,6 @@ class Home extends Controller
         $categories = $category->all();
         $article = new Article();
         $article = $article->find($id);
-        return $this->view('app.index', compact('categories','article'));
-
+        return $this->view('app.show', compact('categories','article'));
     }
 }
