@@ -4,13 +4,15 @@ namespace Application\Controllers;
 
 use Application\Model\Category as CategoryModel;
 
+
+
 class Category extends Controller
 {
     public function index()
     {
         $category = new CategoryModel();
-        $category->all();
-        return $this->view('panel.category.index', compact('category'));
+        $categories = $category->all();
+        return $this->view('panel.category.index', compact('categories'));
     }
 
     public function create()

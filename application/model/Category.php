@@ -29,15 +29,15 @@ class Category extends Model
 
     public function insert($values)
     {
-        $query = "INSERT INTO `categories` ( `name`, `description`, `created_at`) VALUES ( ?, ?, now() );";
+        $query = "INSERT INTO `categories` ( `name`, `description`, created_at) VALUES ( ?, ?, now() );";
         $this->execute($query, array_values($values));
         $this->closeConnection();
     }
 
     public function update($id, $values)
     {
-        $query = "UPDATE `categories` SET `name` = ?, `description` = ?,  `updated_at`= now()  WHERE `id` = ? ;";
-        $this->execute($query, array_merge(array_values($values), [$id]));
+        $query = "UPDATE `categories` SET `name` = ?, `description` = ?,  `updated_at`= now()  WHERE `id` = ? ;" ;
+        $this->execute($query, array_merge( array_values($values), [$id]));
         $this->closeConnection();
     }
 
