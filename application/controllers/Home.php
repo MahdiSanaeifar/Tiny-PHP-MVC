@@ -34,5 +34,6 @@ class Home extends Controller
         $article = new Article();
         $article = $article->find($id);
         return $this->view('app.index', compact('categories','article'));
+
     }
 }
