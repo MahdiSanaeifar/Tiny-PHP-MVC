@@ -25,8 +25,8 @@
                 <td><?= $article['cat_id'] ?></td>
                 <td><?= substr($article['body'], 0, 40) . " ..." ?></td>
                 <td>
-                    <a href="<?= $this->url('article/edit' . $article['id']) ?>" class="btn btn-info btn-sm">Edit</a>
-                    <a href="<?= $this->url('article/delete') ?>" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="<?= $this->url('article/edit/' . $article['id']) ?>" class="btn btn-info btn-sm">Edit</a>
+                    <a href="<?= $this->url('article/destroy/' . $article['id']) ?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         <?php } ?>
